@@ -6,11 +6,12 @@ use \LaravelAcl\Authentication\Models\Permission;
 use \LaravelAcl\Authentication\Validators\PermissionValidator;
 use View, Redirect, App, Config, Session;
 
+use LaravelAcl\Authentication\Controllers\Controller;
 
 use App\Models\Payrolls;
 use \LaravelAcl\Library\Exceptions\JacopoExceptionsInterface;
 
-use Illuminate\Http\Response;
+use App\Http\Requests\HrmPayrollFormRequest;
 
 class HrmController extends Controller
 {
@@ -85,7 +86,7 @@ class HrmController extends Controller
         return View::make('vendor/laravel-authentication-acl/admin/hrm/edit')->with(['sidebar_items' => $this->sidebar_admin, 'data' => $data]);
     }
     
-    public function postPayroll(Request $request)
+    public function postPayroll(HrmPayrollFormRequest $request)
     {
         $payroll_id = $request->get('id');
         $payroll = $this->obj_payroll->findById($payroll_id);

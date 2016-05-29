@@ -1,0 +1,1 @@
+mysqldump -uroot -p hrm_y16> hrm_y16.sql

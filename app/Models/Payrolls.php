@@ -10,7 +10,12 @@ class Payrolls extends Model {
     protected $primaryKey = 'payroll_id';
     public $timestamps = false;
     
+    protected $fillable = [ "payroll_title",
+                            "payroll_desccription", 
+                            "payroll_date"];
 
+    protected $guarded = ["payroll_id"];
+    
     public function findById($id) {
         $payroll = self::find($id);
         return $payroll;
