@@ -23,8 +23,8 @@ class HrmPayrollFormRequest extends FormRequest
      public function rules()
     {
         return [
-            'payroll_title' => 'required',
-            'payroll_description'    => 'required',
+            'title' => 'required',
+            'description'    => 'required',
         ];
     }
 }

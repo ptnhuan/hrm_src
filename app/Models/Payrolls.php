@@ -20,9 +20,11 @@ class Payrolls extends Model {
         $payroll = self::find($id);
         return $payroll;
     }
-    public function updatePayroll($payroll){
-        $payroll = self::find($payroll->payroll_id);
-        $payroll->payroll_title = 'aaa';
+    public function updatePayroll($input){
+        $payroll = self::find($input['id']);
+        
+        $payroll->payroll_title = $input['title'];
+        $payroll->payroll_description = $input['description'];
         $payroll->save();
     }
 }

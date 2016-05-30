@@ -17,10 +17,6 @@ Admin area: edit payroll
         <div class="alert alert-danger">{{$errors->first('model')}}</div>
         @endif
 
-        @foreach($errors->all() as $error)
-                <p class="alert alert-danger">{{$error}}</p>
-        @endforeach
-            
         {{-- successful message --}}
         <?php $message = Session::get('message'); ?>
         @if( isset($message) )
@@ -33,21 +29,33 @@ Admin area: edit payroll
             <div class="panel-body">
                 
                 {!! Form::open(['route'=>['hrm.edit_payroll'], 'method' => 'post'])  !!}
-                <!-- description text field -->
-                <div class="form-group">
-                    {!! Form::label('payroll_title','Title: *') !!}
-                    {!! Form::text('payroll_title',  $payroll->payroll_title, ['class' => 'form-control', 'placeholder' => 'payroll title']) !!}
-                </div>
-                <span class="text-danger">{!! $errors->first('description') !!}</span>
-                <!-- permission text field -->
-                <div class="form-group">
-                    {!! Form::label('payroll_description','Description: *') !!}
-                    {!! Form::text('payroll_description', $payroll->payroll_description , ['class' => 'form-control', 'placeholder' => 'payroll description']) !!}
-                </div>
-                <span class="text-danger">{!! $errors->first('payroll_description') !!}</span>
-                {!! Form::hidden('id', $payroll->payroll_id) !!}
-                <a href="{!! URL::route('hrm.delete_payroll',['id' => $payroll->payroll_id, '_token' => csrf_token()]) !!}" class="btn btn-danger pull-right margin-left-5 delete">Delete</a>
-                {!! Form::submit('Save', array("class"=>"btn btn-info pull-right ")) !!}
+                
+                    <!-- title text field -->
+                    <div class="form-group">
+                        {!! Form::label('title','Title: *') !!}
+                        {!! Form::text('title',  $payroll->payroll_title, ['class' => 'form-control', 'placeholder' => 'payroll title']) !!}
+                        <span class="text-danger">{!! $errors->first('title') !!}</span>
+                    </div>
+                
+                    <!-- description text field -->
+                    <div class="form-group">
+                        {!! Form::label('description','Description: *') !!}
+                        {!! Form::text('description', $payroll->payroll_description , ['class' => 'form-control', 'placeholder' => 'payroll description']) !!}
+                        <span class="text-danger">{!! $errors->first('description') !!}</span>
+                    </div>
+                
+                    <div class="form-group">
+                        <div class="controls">
+                            {!! Form::file('image') !!}
+                            <p class="errors">{!!$errors->first('image')!!}</p>
+                        </div>
+                    </div>
+                
+                    <span class="text-danger">{!! $errors->first('payroll_description') !!}</span>
+                    {!! Form::hidden('id', $payroll->payroll_id) !!}
+                    <a href="{!! URL::route('hrm.delete_payroll',['id' => $payroll->payroll_id, '_token' => csrf_token()]) !!}" class="btn btn-danger pull-right margin-left-5 delete">Delete</a>
+                    {!! Form::submit('Save', array("class"=>"btn btn-info pull-right ")) !!}
+                    
                 {!! Form::close() !!}
             </div>
         </div>

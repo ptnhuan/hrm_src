@@ -12,9 +12,6 @@ use Illuminate\Session\TokenMismatchException;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
 /**
@@ -33,30 +30,6 @@ Route::group(['middleware' => ['web']], function ()
       */
     Route::group(['middleware' => ['admin_logged', 'can_see']], function ()
     {
-        /**
-         * List of payrolls
-         */
-        
-        Route::get('/admin/hrm/payrolls', [
-                'as'   => 'hrm.payrolls',
-                'uses' => '\App\Http\Controllers\HrmController@getPayrolls'
-        ]);
-        Route::get('/admin/hrm/edit_payroll', [
-                'as'   => 'hrm.edit_payroll',
-                'uses' => '\App\Http\Controllers\HrmController@editPayroll'
-        ]);
-        Route::post('/admin/hrm/edit_payroll', [
-                'as'   => 'hrm.edit_payroll',
-                'uses' => '\App\Http\Controllers\HrmController@postPayroll'
-        ]);
-        Route::get('/admin/hrm/add_payroll', [
-                'as'   => 'hrm.add_payroll',
-                'uses' => '\App\Http\Controllers\HrmController@addPayroll'
-        ]);
-        Route::get('/admin/hrm/delete_payroll', [
-                'as'   => 'hrm.delete_payroll',
-                'uses' => '\App\Http\Controllers\HrmController@deletePayroll'
-        ]);
         
         
     });

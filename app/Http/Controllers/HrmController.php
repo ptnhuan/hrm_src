@@ -1,17 +1,17 @@
 <?php namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use \LaravelAcl\Library\Form\FormModel;
-use \LaravelAcl\Authentication\Models\Permission;
-use \LaravelAcl\Authentication\Validators\PermissionValidator;
 use View, Redirect, App, Config, Session;
 
-use LaravelAcl\Authentication\Controllers\Controller;
+use \LaravelAcl\Authentication\Controllers\Controller;
 
 use App\Models\Payrolls;
 use \LaravelAcl\Library\Exceptions\JacopoExceptionsInterface;
 
 use App\Http\Requests\HrmPayrollFormRequest;
+
+use App\Http\Requests\PayrollValidator;
+use \LaravelAcl\Library\Exceptions\ValidationException;
 
 class HrmController extends Controller
 {
@@ -62,7 +62,8 @@ class HrmController extends Controller
         $data = array_merge($this->data, array(
             'payrolls' => $payrolls
         ));
-        return View::make('vendor/laravel-authentication-acl/admin/hrm/payrolls')->with(['sidebar_items' => $this->sidebar_admin, 'data' => $data]);
+        
+        return View::make('laravel-authentication-acl::admin.hrm.payrolls')->with(['sidebar_items' => $this->sidebar_admin, 'data' => $data]);
                                                                                         
     }
     
@@ -83,15 +84,30 @@ class HrmController extends Controller
         $data = array_merge($this->data, array(
             'payroll' => $payroll
         ));
-        return View::make('vendor/laravel-authentication-acl/admin/hrm/edit')->with(['sidebar_items' => $this->sidebar_admin, 'data' => $data]);
+        return View::make('laravel-authentication-acl::admin.hrm.edit')->with(['sidebar_items' => $this->sidebar_admin, 'data' => $data]);
+
     }
     
-    public function postPayroll(HrmPayrollFormRequest $request)
+    public function postPayroll(Request $request)
     {
+        $validator = new PayrollValidator();
+        $input = $request->all();
         $payroll_id = $request->get('id');
-        $payroll = $this->obj_payroll->findById($payroll_id);
-        $this->obj_payroll->updatePayroll($payroll);
-        return redirect()->route("hrm.edit_payroll",["id" => $payroll_id]);
+        if($validator->validate($input))
+        {
+            $payroll = $this->obj_payroll->findById($payroll_id);
+            $this->obj_payroll->updatePayroll($input);
+            return Redirect::route("hrm.edit_payroll", ["id" => $payroll_id])->withMessage(Config::get('acl_messages.flash.success.permission_permission_edit_success'));
+        }
+        else
+        {
+            $errors = $validator->getErrors();
+//            throw new ValidationException;
+            
+            var_dump($errors);
+            die();
+            return Redirect::route("hrm.edit_payroll", ["id" => $payroll_id])->withInput()->withErrors($errors);
+        }
     }
     
     /**
