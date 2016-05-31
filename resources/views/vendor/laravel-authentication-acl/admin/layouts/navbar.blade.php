@@ -17,6 +17,7 @@ $less->compileFile(public_path() . '/packages/jacopo/laravel-authentication-acl/
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </a>
+        
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                 <li class="drop message-menu">
@@ -248,8 +249,8 @@ $less->compileFile(public_path() . '/packages/jacopo/laravel-authentication-acl/
         </div>
     </nav>
 </header>
-</div>
- <div class="container-fluid margin-right-15">
+</div>zzzzzz
+<!-- <div class="container-fluid margin-right-15">
         <div class="navbar-header">
             <a class="navbar-brand bariol-thin" href="#">{{$app_name}}</a>
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-main-menu">
@@ -284,6 +285,6 @@ $less->compileFile(public_path() . '/packages/jacopo/laravel-authentication-acl/
                         </li>
                     </ul>
                 </li>
-            </div><!-- nav-right -->
-        </div><!--/.nav-collapse -->
-    </div>
+            </div> nav-right 
+        </div>/.nav-collapse 
+    </div>-->
