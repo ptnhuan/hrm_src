@@ -3,17 +3,14 @@ include (public_path() . '/packages/jacopo/laravel-authentication-acl/less/lessc
 $less = new lessc;
 $less->compileFile(public_path() . '/packages/jacopo/laravel-authentication-acl/less/sidebar-left.less', public_path() . '/packages/jacopo/laravel-authentication-acl/_css/sidebar-left.css');
 ?>
-
-
-
 <aside class="main-sidebar">
     <section class="sidebars" style="height: auto;">
         <div class="user-panel">
-            <div class="pull-left image">
-                <img src="/packages/jacopo/laravel-authentication-acl/images/user2-160x160.jpg'" class="img-circle" alt="User Image">
+            <div class="pull-left image ">
+                  @include('laravel-authentication-acl::admin.layouts.partials.avatar', ['size' => 30])
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
+                <p>{!! isset($logged_user) ? $logged_user->email : 'User' !!}</p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
