@@ -10,7 +10,7 @@ $less->compileFile(public_path() . '/packages/jacopo/laravel-authentication-acl/
     <section class="sidebars" style="height: auto;">
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="images/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="/packages/jacopo/laravel-authentication-acl/images/user2-160x160.jpg'" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p>Alexander Pierce</p>
