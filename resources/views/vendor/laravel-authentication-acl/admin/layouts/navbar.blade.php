@@ -17,7 +17,14 @@ $less->compileFile(public_path() . '/packages/jacopo/laravel-authentication-acl/
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </a>
-        
+         <ul class="nav navbar-nav">
+              
+                @if(isset($menu_items))
+                    @foreach($menu_items as $item)
+                        <li class="{!! LaravelAcl\Library\Views\Helper::get_active_route_name($item->getRoute()) !!}"> <a href="{!! $item->getLink() !!}">{!!$item->getName()!!}</a></li>
+                    @endforeach
+                @endif
+            </ul>
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                 <li class="drop message-menu">
@@ -136,6 +143,7 @@ $less->compileFile(public_path() . '/packages/jacopo/laravel-authentication-acl/
     </nav>
 </header>
 </div>
+
 <!-- <div class="container-fluid margin-right-15">
         <div class="navbar-header">
             <a class="navbar-brand bariol-thin" href="#">{{$app_name}}</a>
@@ -147,14 +155,7 @@ $less->compileFile(public_path() . '/packages/jacopo/laravel-authentication-acl/
             </button>
         </div>
         <div class="collapse navbar-collapse" id="nav-main-menu">
-            <ul class="nav navbar-nav">
-              
-                @if(isset($menu_items))
-                    @foreach($menu_items as $item)
-                        <li class="{!! LaravelAcl\Library\Views\Helper::get_active_route_name($item->getRoute()) !!}"> <a href="{!! $item->getLink() !!}">{!!$item->getName()!!}</a></li>
-                    @endforeach
-                @endif
-            </ul>
+           
             <div class="navbar-nav nav navbar-right">
                 <li class="dropdown dropdown-user">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="dropdown-profile">
