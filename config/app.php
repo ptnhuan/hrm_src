@@ -162,6 +162,8 @@ return [
         LaravelAcl\Authentication\AuthenticationServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         
+        App\Http\ViewComposers\ComposerServiceProvider::class,
+        
 
     ],
 

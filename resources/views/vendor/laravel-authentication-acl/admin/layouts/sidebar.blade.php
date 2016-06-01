@@ -1,5 +1,4 @@
 <?php
-include (public_path() . '/packages/jacopo/laravel-authentication-acl/less/lessc.inc.php');
 $less = new lessc;
 $less->compileFile(public_path() . '/packages/jacopo/laravel-authentication-acl/less/sidebar-left.less', public_path() . '/packages/jacopo/laravel-authentication-acl/_css/sidebar-left.css');
 ?>
@@ -10,7 +9,7 @@ $less->compileFile(public_path() . '/packages/jacopo/laravel-authentication-acl/
     <section class="sidebars" style="height: auto;">
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="/packages/jacopo/laravel-authentication-acl/images/user2-160x160.jpg'" class="img-circle" alt="User Image">
+                <img src="images/user2-160x160.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p>Alexander Pierce</p>
@@ -50,4 +49,3 @@ $less->compileFile(public_path() . '/packages/jacopo/laravel-authentication-acl/
         </ul>
     </section>
 </aside>
-
