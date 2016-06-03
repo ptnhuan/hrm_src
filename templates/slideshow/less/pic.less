@@ -1,0 +1,322 @@
+body{
+    background: #f9f9f9;
+}
+.row.head {
+    padding-top: 50px;
+    margin-top: 60px!important;
+    margin-bottom: 60px!important;
+    margin: 60px 0 40px;
+    h2 {
+        font-size: 48px;
+        line-height: 48px;
+        font-family: "PT Sans bold",sans-serif;
+        margin-top: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+}
+.slider1{
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+.slick-slide {
+    width: 390px;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    display: block;
+    .top-event {
+        height: 320px;
+        position: relative;
+        color: #fff;
+        overflow: hidden;
+        margin-bottom: 35px;
+        margin-left: 15px;
+        margin-right: 15px;
+        display: block;
+        opacity: 1;
+        animation-duration: 0.4s;
+        img {
+            position: absolute;
+            min-width: 100%;
+            display: block;
+        }
+        .top-event-descr:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 14px;
+            top: -9px;
+            left: 0;
+            background: url(/joomla-test2/trunk/images/pic/romb.png) repeat-x;
+        }
+        .top-event-descr {
+            position: relative;
+            width: 100%;
+            top: 0;
+            left: 0;
+            padding: 15px;
+            background: url(/joomla-test2/trunk/images/pic/header-shad.png) left -20px repeat-x;
+            -webkit-transition: background .3s ease .3s;
+            transition: background .3s ease 0s;
+            padding: 20px;
+            .date-event {
+                min-width: 55px;
+                float: left;
+                background: #e15e32;
+                text-align: center;
+                padding: 5px 11px;
+                margin-right: 18px;
+                margin-right: 20px;
+                .month,.day,.week-day{
+                    font-family: Verdana,sans-serif;
+                    text-transform: uppercase;
+                }
+                .month {
+                    font-size: 10px;
+                }
+                .day {
+                    font-size: 22px;
+                    line-height: 22px;
+                }
+                .week-day {
+                    font-size: 10px;
+                }
+            }
+            .item-title {
+                font-family: "PT Sans bold",sans-serif;
+                color: #fff;
+                position: relative;
+                height: 60px;
+                h3 {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    .top-event-title {
+                        display: block;
+                        line-height: 17px;
+                        font-family: "PT Sans bold",sans-serif;
+                        font-size: 14px;
+                        margin-top: 4px;
+                        color: #fff;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                        font-weight: bold;
+                    }
+                }
+
+            }
+            .ticket-triangle-left,.ticket-triangle-right,.ticket-triangle-leftB,.ticket-triangle-rightB {
+                position: absolute;
+                background-image: url(/joomla-test2/trunk/images/pic/sprites.png);
+                background-repeat: no-repeat;
+                vertical-align: middle;
+                z-index: 9;
+            }
+            .ticket-triangle-left{
+                width: 27px;
+                height: 17px;
+                top: 0;
+                left: -17px;
+                background-position: -261px -52px;
+            }
+            .ticket-triangle-right {
+                width: 27px;
+                height: 17px;
+                top: 0;
+                right: -16px;
+                background-position: -261px -52px;
+            }
+            .ticket-triangle-leftB {
+                width: 27px;
+                height: 27px;
+                bottom: -13px;
+                left: -16px;
+                background-position: -261px -39px;
+            }
+            .ticket-triangle-rightB {
+                width: 27px;
+                height: 27px;
+                bottom: -13px;
+                right: -14px;
+                background-position: -261px -39px;
+            }
+        }
+        .top-event-descr:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 14px;
+            bottom: -5px;
+            left: 0;
+            background: url(/joomla-test2/trunk/images/pic/romb.png) repeat-x;
+            z-index: 8;
+        }
+        .rombus {
+            width: 86px;
+            height: 86px;
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            background: url(/joomla-test2/trunk/images/pic/transp-arrow-events.png) center no-repeat;
+        }
+        .popup-evt {
+            display: block;
+            position: absolute;
+            min-height: 270px;
+            max-height: 270px;
+            top: 360px;
+            left: 0;
+            width: 100%;
+            padding: 20px 15px 20px 0;
+            -webkit-transition: top .3s ease .3s;
+            transition: top .3s ease 0s;
+            overflow: hidden;
+            background: #bd3b3d;
+            background: -moz-linear-gradient(-135deg,#bd3b3d 0,#8f2c41 100%);
+            background: -webkit-gradient(linear,left top,right bottom,color-stop(0%,#bd3b3d),color-stop(100%,#8f2c41));
+            background: -webkit-linear-gradient(-135deg,#bd3b3d 0,#8f2c41 100%);
+            background: -o-linear-gradient(-135deg,#bd3b3d 0,#8f2c41 100%);
+            background: -ms-linear-gradient(-135deg,#bd3b3d 0,#8f2c41 100%);
+            background: linear-gradient(135deg,#bd3b3d 0,#8f2c41 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bd3b3d',endColorstr='#8f2c41',GradientType=1);
+            .poput-evt-inner {
+                display: block;
+                min-height: 215px;
+                position: relative;
+                overflow: hidden;
+                padding-left: 30px;
+                padding-right: 0;
+                .start-row {
+                    padding: 0 0 10px;
+                    margin-right: -15px;
+                    border-bottom: 1px solid rgba(255,255,255,.15);
+                    font-size: 12px;
+                    overflow: hidden;
+
+                }
+                .left-evt-inner {
+                    width: 55px;
+                    float: left;
+                    text-align: right;
+                    margin-right: 18px;
+                    font-size: 14px;
+                    color: #f2e1e1;
+                }
+                .right-evt-inner {
+                    width: 64%;
+                    float: left;
+                    font-size: 14px;
+                    color: #fff;
+                }
+                .evt-liner {
+                    padding-top: 115px;
+                    width: 100%;
+                    border-bottom: 1px solid rgba(255,255,255,.15);
+                }
+                .what-row {
+                    padding: 10px 0;
+                    font-size: 12px;
+                    .evt-guest{
+                        font-weight: bold;
+                        font-size: 14px;
+                    }
+                    .sm-tx{
+                        font-size:12px;
+                    }
+                }
+            }
+            a:hover {
+                text-decoration: none;
+                outline: 0;
+                color: #fff;
+            }
+            .top-event__link {
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+        }
+
+    }
+    .top-event:hover .top-event-descr {
+        background: rgba(0,0,0,.8);
+        -webkit-transition: background .5s ease .3s;
+        transition: background .5s ease 0s;
+    }
+    .top-event:hover .popup-evt {
+        top: 104px;
+        -webkit-transition: all .3s ease;
+        transition: all .3s ease;
+    }
+}
+@media (max-width: 1000px){
+    .bx-wrapper .bx-controls-direction a{
+        top: 140px !important;
+    }
+    .bx-prev {
+        height: 50px;
+        bottom: auto;
+        right: auto;
+        left: 6% !important;
+    }
+    .bx-next {
+        height: 50px;
+        bottom: auto;
+        left: auto;
+        right: 5px;
+    }
+}
+
+.bx-pager{
+    bottom: -45px;
+    z-index: 5;
+    display: block;
+    .bx-pager-item{
+        margin-right: 20px;
+        position: relative;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+    margin-right: 20px;
+    .bx-pager-link{
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-color: #a82743;
+    border: 2px solid #a82743;
+    cursor: pointer;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    
+    }
+    .bx-pager-link:hover{
+        -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background: none;
+    border: 2px solid #a82743;
+    
+    }
+    .bx-pager-link:focus{
+        -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background: none;
+    border: 2px solid #cbcbcb;
+    
+    }
+    }
+}
+
+
+

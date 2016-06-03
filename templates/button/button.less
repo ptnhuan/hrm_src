@@ -1,0 +1,94 @@
+@import "../vars.less";
+
+
+.more-button-bott {
+    text-align: center;
+    padding-top: 50px;
+    .button-more {
+        display: inline-block;
+        padding: 12px 19px;
+        border: 1px solid #e9cfd5;
+        background: 0 0;
+        cursor: pointer;
+        -webkit-transition: all .3s ease;
+        transition: all .3s ease;
+        .button-filter-arr {
+            display: block;
+            float: left;
+            width: 25px;
+            height: 25px;
+            position: relative;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-transition: all .3s ease;
+            transition: all .3s ease;
+            .button-filter-line.left {
+                display: block;
+                width: 25px;
+                height: 2px;
+                position: absolute;
+                left: 0;
+                top: 11px;
+                background: #a82743;
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                -webkit-transition: all .3s ease;
+                transition: all .3s ease;
+            }
+            .button-filter-line.right {
+                display: block;
+                width: 25px;
+                height: 2px;
+                position: absolute;
+                left: 0;
+                top: 11px;
+                background: #a82743;
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                -webkit-transition: all .3s ease;
+                transition: all .3s ease;
+            }
+        }
+        .button-filter-text {
+            float: left;
+            font-family: "PT Sans reg",sans-serif;
+            font-size: 20px;
+            line-height: 22px;
+            color: #a82743;
+            margin-left: 20px;
+        }
+    }
+    .button-more:hover {
+        background: #e15e32;
+        border: 1px solid #e15e32;
+        -webkit-transition: all .3s ease;
+        transition: all .3s ease;
+        .button-filter-arr {
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+            -webkit-transition: all .3s ease;
+            transition: all .3s ease;
+        }
+        .button-filter-line.left {
+            width: 20px;
+            top: 18px;
+            background: #fff;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-transition: all .3s ease;
+            transition: all .3s ease;
+        }
+        .button-filter-line.right {
+            width: 20px;
+            top: 5px;
+            background: #fff;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transition: all .3s ease;
+            transition: all .3s ease;
+        }
+        .button-filter-text{
+            color: #fff;
+        }
+    }
+}
