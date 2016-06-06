@@ -1,0 +1,119 @@
+@import "../vars.less";
+body{
+    background-color: #626262;
+}
+.loginbox {
+    background-color: #FFF;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    color: #626262;
+    border-radius: 12px;
+    width: 616px;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    .site-image {
+        display: block;
+        width: 90px;
+        height: 30px;
+        padding: 25px;
+        background-image: url(../../..//images/notice-logo.jpg);
+        background-size: 80px 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0 auto;
+    }
+    .innerheading {
+        background: #428BCA;
+        padding: 2px;
+        -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+        color: #FFF;
+        clear: both;
+        h1 {
+            margin: 0;
+            font-family: inherit;
+            font-weight: bold;
+            color: inherit;
+            text-rendering: optimizelegibility;
+            font-size: 21px;
+            line-height: 32px;
+            padding-left: 10px;
+        }
+    }
+
+    .helpbox {
+        margin: 15px 10px;
+        padding: 1px 5px 5px 5px;
+        background-color: #EEE;
+        border-radius: 4px;
+    }
+    .fgtn {
+        font-weight: normal;
+        color: #626262;
+    }
+    .login-form {
+        width: 320px;    
+        margin: auto;
+        margin-top: 10px;
+        label {
+            font-size: 13px;
+            font-weight: bold;
+            line-height: 13px;
+            vertical-align: middle;
+            white-space: nowrap;
+            width: 200px;
+            margin: 5px 0px 5px;
+        }
+        input {
+            width: 280px;
+            font-size: 13px;
+            font-weight: normal;
+            line-height: 18px;
+            display: inline-block;
+            height: 30px;
+            margin-top: 3px;
+        }
+        .btn {
+            border-left: 1px solid #DCDCDC;
+            border-right: 1px solid #DCDCDC;
+            border-top: 1px solid #DCDCDC;
+            border-bottom: 1px solid #b3b3b3;
+            padding: 8px 20px 8px;
+            font-size: 13px;
+            color: #FFF;
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+            vertical-align: middle;
+            border-radius: 4px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            background-image: linear-gradient(top, #fbb450, #f89406);
+            background-color: #428BCA;
+            width: 100px;
+            height: 34px;
+            margin-left: 44px;
+        }
+        .btn:hover{
+            background-color: #2196F3;;
+        }
+    }
+    .textEntry {
+        margin-bottom: 15px;
+    }
+
+}
+@media only screen and (max-width : 700px){
+    .loginbox{
+        width: 380px;
+    }
+}
+@media only screen and (max-width : 500px){
+    .loginbox{
+        width: 300px;
+        .login-form {
+            width: 320px;
+            margin: auto;
+            margin-left: 11px;
+        }
+    }
+}
