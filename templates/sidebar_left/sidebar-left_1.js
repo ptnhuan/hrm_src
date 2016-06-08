@@ -14,7 +14,7 @@ jQuery(document).ready(function ($) {
             
             $('.main-sidebar').animate({'width': '230px'}, '1000');
             $('.main-sidebar').show(200);
-            $('.content-wrapper').animate({'margin-left': '230px'}, '1000');
+            $('.content-wrapper').animate({'margin-left': '0px'}, '1000');
         }
     });
 });
