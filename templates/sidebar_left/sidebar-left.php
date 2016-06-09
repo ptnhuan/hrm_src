@@ -1,6 +1,5 @@
 
 
-
 <aside class="main-sidebar">
     <section class="sidebar" style="height: auto;">
         <div class="user-panel">
@@ -160,4 +159,5 @@
         </ul>
     </section>
 </aside>
+
 
